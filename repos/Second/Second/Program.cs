@@ -10,13 +10,10 @@ namespace Second
     {
         static void Main(string[] args)
         {
-            string input = Console.ReadLine();
-            int shift = int.Parse(input);
-
-            input = Console.ReadLine();
-            string[] div = input.Split(new char[] { ' ' });
+            int shift = int.Parse(Console.ReadLine());
+            string[] div = Console.ReadLine().Split(new char[] { ' ' });
             string[] result = new string[div.Length];
-
+            
             for (int i = 0; i < result.Length; i++)
                 result[i] = div[(i + shift) % div.Length];
 

@@ -10,12 +10,9 @@ namespace First
     {
         static void Main(string[] args)
         {
-            string input = Console.ReadLine();
-            string[] diff = input.Split(new char[] { ' ' });
-            int a;           
-            var nums = from x in diff
-                       where int.TryParse(x, out a)
-                       select x;
+            string[] diff = Console.ReadLine().Split(new char[] { ' ' });
+            int a;
+            var nums = diff.Where(x => int.TryParse(x, out a));
             for (int i = nums.Count() - 1; i > -1 ; i--)
                 Console.Write(nums.ToList()[i] + " ");
             Console.ReadKey();
